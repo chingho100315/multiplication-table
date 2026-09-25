@@ -1,1 +1,22 @@
+name: Hello World Workflow
 
+# 触发条件：当有代码推送到 main 分支时运行
+on:
+  push:
+    branches: [ "main" ]
+
+# 定义要执行的任务
+jobs:
+  say-hello:
+    # 运行环境：使用最新的 Ubuntu 系统
+    runs-on: ubuntu-latest
+
+    # 具体的执行步骤
+    steps:
+      # 步骤1：检出代码（可选，但推荐保留，方便以后扩展）
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 步骤2：打印 Hello World
+      - name: Print Hello World
+        run: echo "Hello World"
